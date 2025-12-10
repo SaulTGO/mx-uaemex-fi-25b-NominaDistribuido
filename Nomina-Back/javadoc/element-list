@@ -1,0 +1,10 @@
+mx.uaemex.fi.isii.api_backend
+mx.uaemex.fi.isii.api_backend.config
+mx.uaemex.fi.isii.api_backend.controller
+mx.uaemex.fi.isii.api_backend.domain.dto.request
+mx.uaemex.fi.isii.api_backend.domain.dto.response
+mx.uaemex.fi.isii.api_backend.domain.entity
+mx.uaemex.fi.isii.api_backend.domain.POJO
+mx.uaemex.fi.isii.api_backend.repository
+mx.uaemex.fi.isii.api_backend.services
+mx.uaemex.fi.isii.api_backend.util
