@@ -51,7 +51,17 @@ label {
     color: #333;
     font-weight: 600;
     margin-bottom: 8px;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.field-hint {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+    font-style: italic;
 }
 
 input[type="text"],
@@ -102,15 +112,22 @@ input[type="checkbox"] {
     font-weight: 500;
 }
 
+/* Campo de contraseña condicional */
 .password-field {
-    display: none;
-    animation: fadeIn 0.3s;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, margin 0.3s ease-in-out;
+    margin-bottom: 0;
 }
 
 .password-field.active {
-    display: block;
+    max-height: 200px;
+    opacity: 1;
+    margin-bottom: 20px;
 }
 
+/* Animación de aparición */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -156,6 +173,13 @@ button[type="submit"]:hover,
 button[type="submit"]:active,
 .btn-submit:active {
     transform: translateY(0);
+}
+
+button[type="submit"]:disabled,
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
 }
 
 .btn-back {
@@ -205,6 +229,31 @@ button[type="submit"]:active,
     color: #e74c3c;
 }
 
+/* Mensajes de error y éxito */
+.error-message {
+    background-color: #fee;
+    border: 1px solid #fcc;
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 16px;
+    color: #c33;
+    font-size: 14px;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.message {
+    background-color: #efe;
+    border: 1px solid #cfc;
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 16px;
+    color: #3c3;
+    font-size: 14px;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
     .container {
@@ -236,96 +285,4 @@ button[type="submit"]:active,
         padding: 12px 16px;
         font-size: 14px;
     }
-}
-
-.error-message {
-    background-color: #fee;
-    border: 1px solid #fcc;
-    border-radius: 4px;
-    padding: 10px 15px;
-    margin-bottom: 20px;
-    color: #c33;
-    font-size: 14px;
-    text-align: center;
-}
-
-.message {
-    background-color: #f0ffee;
-    border: 1px solid #e0ffcc;
-    border-radius: 4px;
-    padding: 10px 15px;
-    margin-bottom: 20px;
-    color: #5ccc33;
-    font-size: 14px;
-    text-align: center;
-}
-
-label {
-    display: block;
-    color: #333;
-    font-weight: 600;
-    margin-bottom: 8px;
-    font-size: 15px;
-    line-height: 1.5;
-}
-
-.field-hint {
-    display: block;
-    font-weight: 400;
-    font-size: 12px;
-    color: #666;
-    margin-top: 4px;
-    font-style: italic;
-}
-/* Estilos para el campo de contraseña condicional */
-.password-field {
-    display: none; /* Oculto por defecto */
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-}
-
-.password-field.active {
-    display: block;
-    opacity: 1;
-    max-height: 200px;
-}
-
-/* Mensajes de error y éxito */
-.error-message {
-    background-color: #fee;
-    border: 1px solid #fcc;
-    border-radius: 4px;
-    padding: 12px;
-    margin-bottom: 16px;
-    color: #c33;
-    font-size: 14px;
-}
-
-.message {
-    background-color: #efe;
-    border: 1px solid #cfc;
-    border-radius: 4px;
-    padding: 12px;
-    margin-bottom: 16px;
-    color: #3c3;
-    font-size: 14px;
-}
-
-/* Animación suave para mostrar/ocultar */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.error-message,
-.message {
-    animation: fadeIn 0.3s ease-in-out;
 }

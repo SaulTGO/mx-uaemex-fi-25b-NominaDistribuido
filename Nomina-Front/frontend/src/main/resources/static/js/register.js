@@ -89,11 +89,6 @@ document.getElementById('registerForm').addEventListener('submit', async functio
             document.getElementById('esAdministrador').checked = false;
             togglePassword(); // Ocultar campo de contraseña
 
-            // Opcional: Redirigir después de 2 segundos
-            setTimeout(() => {
-                window.location.href = '/user/home';
-            }, 2000);
-
         } else {
             // Error en el registro
             showError(data.message || 'Error al registrar usuario');
@@ -178,5 +173,11 @@ function togglePassword() {
 
 // Inicializar el estado al cargar la página
 document.addEventListener('DOMContentLoaded', function() {
+    const checkbox = document.getElementById('esAdministrador');
+
+    // Agregar el evento change al checkbox
+    checkbox.addEventListener('change', togglePassword);
+
+    // Llamar a togglePassword inicialmente para establecer el estado correcto
     togglePassword();
 });
