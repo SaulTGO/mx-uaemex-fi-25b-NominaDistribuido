@@ -1,0 +1,7 @@
+mx.uaemex.fi.isii.frontend
+mx.uaemex.fi.isii.frontend.config
+mx.uaemex.fi.isii.frontend.controller
+mx.uaemex.fi.isii.frontend.domain.dto.request
+mx.uaemex.fi.isii.frontend.domain.dto.response
+mx.uaemex.fi.isii.frontend.interceptor
+mx.uaemex.fi.isii.frontend.util
